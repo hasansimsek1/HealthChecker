@@ -1,0 +1,50 @@
+﻿@model HealthHistoryViewModel
+@{
+    ViewData["Title"] = "Target Details";
+}
+
+<div class="text-center mt-5">
+    <h2 class="display-4">Target Health History</h2>
+</div>
+
+<div class="container mt-5" style="max-width:1000px">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-sm table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Url</th>
+                        <th scope="col">Time</th>
+                        <th scope="col">Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.History)
+                    {
+                        @if (item.IsSuccessful)
+                        {
+                            <tr class="table-success">
+                                <td>@Model.Target.Name</td>
+                                <td>@Model.Target.Url</td>
+                                <td>@item.DateAdded.ToString()</td>
+                                <td>@item.StatusExplanation</td>
+
+                            </tr>
+                        }
+                        else
+                        {
+                            <tr class="table-danger">
+                                <td>@Model.Target.Name</td>
+                                <td>@Model.Target.Url</td>
+                                <td>@item.DateAdded.ToString()</td>
+                                <td>@item.StatusExplanation</td>
+
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

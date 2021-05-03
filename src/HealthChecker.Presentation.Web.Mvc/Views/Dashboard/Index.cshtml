@@ -1,0 +1,45 @@
+﻿@model List<TargetViewModel>
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<h3>Dashboard</h3>
+
+<div class="row">
+    <div class="col-6">
+        <div class="text-center">
+            <h2 class="display-5">My Targets</h2>
+            <p>You can click to a list item to update your target information.</p>
+        </div>
+        <div class="list-group">
+            @if (Model == null || Model.Count == 0)
+            {
+                <p>You have no targets. <a href="/dashboard/newtarget">Click here to create new target.</a></p>
+            }
+            else
+            {
+                @foreach (var item in Model)
+                {
+                    <a href="/dashboard/target/@item.Id" class="list-group-item">
+                        <span>Name: @item.Name</span> <br />
+                        <span>Url: @item.Url</span> <br />
+                        <span>Interval: @item.MonitoringInterval</span> <br />
+                    </a>
+                }
+            }
+
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="text-center">
+            <h2 class="display-5">Health History</h2>
+            <p>You can click to a list item to see your target's healt history.</p>
+        </div>
+        <div class="list-group">
+            @foreach (var item in Model)
+            {
+                <a href="/dashboard/targethealthhistory/@item.Id" class="list-group-item">@item.Name </a>
+            }
+        </div>
+    </div>
+</div>
