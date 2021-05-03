@@ -1,5 +1,5 @@
 # HealthChecker
-Sample application that executes background jobs.
+Sample web application that executes background jobs.
 
 
 ### If you want to get it running locally, take these steps..
