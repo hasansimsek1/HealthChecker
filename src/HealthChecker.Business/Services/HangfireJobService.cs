@@ -3,6 +3,7 @@ using HealthChecker.Business.Contracts;
 using HealthChecker.Persistence;
 using HealthChecker.Persistence.Dtos;
 using HealthChecker.Persistence.Entities;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using RestSharp;
 using System;
@@ -28,14 +29,20 @@ namespace HealthChecker.Business.Services
         private readonly ICrudRepository<HealthCheck, HealthCheckDto> _healthRepository;
 
         /// <summary>
+        /// Injected configuration object
+        /// </summary>
+        private readonly IConfiguration _config;
+
+        /// <summary>
         /// Constructor that injects logger and health repository
         /// </summary>
         /// <param name="logger">Injected logger that is configured in DI system.</param>
         /// <param name="healthRepository">Injected repository of health check related records.</param>
-        public HangfireJobService(ILogger<HangfireJobService> logger, ICrudRepository<HealthCheck, HealthCheckDto> healthRepository)
+        public HangfireJobService(ILogger<HangfireJobService> logger, ICrudRepository<HealthCheck, HealthCheckDto> healthRepository, IConfiguration config)
         {
             _logger = logger;
             _healthRepository = healthRepository;
+            _config = config;
         }
 
         /// <summary>
@@ -111,12 +118,17 @@ namespace HealthChecker.Business.Services
         {
             try
             {
-                var credentials = new NetworkCredential("healthchecker007@gmail.com", "healthcheck.007");
+                var smtpUsername = _config["SmtpUsername"];
+                var smtpPassword = _config["SmtpPassword"];
+                var smtpPort = _config["SmtpPort"];
+                var smtpHost = _config["SmtpHost"];
 
-                using var smtpClient = new SmtpClient("smtp.gmail.com", 587);
+                var credentials = new NetworkCredential(smtpUsername, smtpPassword);
+
+                using var smtpClient = new SmtpClient(smtpHost, Convert.ToInt32(smtpPort));
                 using var msg = new MailMessage
                 {
-                    From = new MailAddress("healthchecker007@gmail.com"),
+                    From = new MailAddress(smtpUsername),
                     Subject = "Your website is down!",
                     Body = $"We could not reach your website ({url}) at " + DateTime.Now.ToString(),
                     IsBodyHtml = true,

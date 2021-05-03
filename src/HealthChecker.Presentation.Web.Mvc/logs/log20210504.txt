@@ -1,0 +1,203 @@
+05/04/2021 02:30:15 
+
+
+
+ Application is starting at 05/03/2021 23:30:15 
+ 05/04/2021 02:30:18 Start installing Hangfire SQL objects... 
+ 05/04/2021 02:30:28 Hangfire SQL objects installed. 
+ 05/04/2021 02:30:28 Starting Hangfire Server using job storage: 'SQL Server: (localdb)\mssqllocaldb@aspnet-HealthChecker.Presentation.Web.Mvc-FF861C1E-4AFA-4E5A-B3A2-DAAF3BEB950D' 
+ 05/04/2021 02:30:28 Using the following options for SQL Server job storage: Queue poll interval: 00:00:00. 
+ 05/04/2021 02:30:28 Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15 
+ 05/04/2021 02:30:28 Server desktop-8a54o9j:10568:0337aa9b successfully announced in 351.8998 ms 
+ 05/04/2021 02:30:28 Server desktop-8a54o9j:10568:0337aa9b is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler... 
+ 05/04/2021 02:30:28 Server desktop-8a54o9j:10568:0337aa9b all the dispatchers started 
+ 05/04/2021 02:30:30 HTTP "GET" "/" responded 200 in 732.7866 ms 
+ 05/04/2021 02:30:35 HTTP "GET" "/" responded 200 in 27.4738 ms 
+ 05/04/2021 02:30:40 HTTP "GET" "/Account/Register" responded 200 in 120.4866 ms 
+ 05/04/2021 02:31:00 null registered successfully. 
+ 05/04/2021 02:31:00 HTTP "POST" "/Account/Register" responded 302 in 2703.4707 ms 
+ 05/04/2021 02:31:00 HTTP "GET" "/dashboard" responded 200 in 385.2503 ms 
+ 05/04/2021 02:31:09 HTTP "GET" "/dashboard/newtarget" responded 200 in 48.6555 ms 
+ 05/04/2021 02:31:12 HTTP "GET" "/Dashboard" responded 200 in 16.6624 ms 
+ 05/04/2021 02:31:13 HTTP "GET" "/Dashboard/NewTarget" responded 200 in 7.4926 ms 
+ 05/04/2021 02:31:14 HTTP "GET" "/Log" responded 200 in 32.1028 ms 
+ 05/04/2021 02:31:15 HTTP "GET" "/log/detail?fileName=log20210504" responded 200 in 55.2902 ms 
+ 05/04/2021 02:31:21 HTTP "GET" "/hangfire" responded 200 in 224.0219 ms 
+ 05/04/2021 02:31:21 HTTP "GET" "/hangfire/css17220" responded 200 in 33.0621 ms 
+ 05/04/2021 02:31:21 HTTP "GET" "/hangfire/js17220" responded 200 in 64.8645 ms 
+ 05/04/2021 02:31:21 HTTP "GET" "/hangfire/fonts/glyphicons-halflings-regular/woff2" responded 200 in 2.0286 ms 
+ 05/04/2021 02:31:23 HTTP "POST" "/hangfire/stats" responded 200 in 56.3633 ms 
+ 05/04/2021 02:31:27 "qwert@qwert.com" logged out successfully. 
+ 05/04/2021 02:31:27 HTTP "POST" "/Account/Logout?returnUrl=%2F" responded 302 in 16.2954 ms 
+ 05/04/2021 02:31:27 HTTP "GET" "/" responded 200 in 1.2907 ms 
+ 05/04/2021 02:31:28 HTTP "GET" "/Account/Login" responded 200 in 32.9768 ms 
+ 05/04/2021 02:31:42 Invalid login attempt by null. Login result: "IsLockedOut:False, RequiresTwoFactor:False, IsNotAllowed:False" 
+ 05/04/2021 02:31:42 HTTP "POST" "/Account/Login" responded 200 in 34.2083 ms 
+ 05/04/2021 02:31:55 Invalid login attempt by null. Login result: "IsLockedOut:False, RequiresTwoFactor:False, IsNotAllowed:False" 
+ 05/04/2021 02:31:55 HTTP "POST" "/Account/Login" responded 200 in 13.2744 ms 
+ 05/04/2021 02:31:58 HTTP "GET" "/Account/Register" responded 200 in 4.2178 ms 
+ 05/04/2021 02:32:08 null registered successfully. 
+ 05/04/2021 02:32:08 HTTP "POST" "/Account/Register" responded 302 in 34.0718 ms 
+ 05/04/2021 02:32:08 HTTP "GET" "/dashboard" responded 200 in 7.2322 ms 
+ 05/04/2021 02:32:09 HTTP "GET" "/dashboard/newtarget" responded 200 in 5.2736 ms 
+ 05/04/2021 02:32:33 New job created by "hasansimsek1@gmail.com". JobId: "8a4a686f-ea82-46f4-bcd8-6cee11ed92ec" 
+ 05/04/2021 02:32:33 "hasansimsek1@gmail.com" added new target "test1". 
+ 05/04/2021 02:32:33 HTTP "POST" "/dashboard/newtarget" responded 302 in 226.1096 ms 
+ 05/04/2021 02:32:33 HTTP "GET" "/Dashboard" responded 200 in 24.7313 ms 
+ 05/04/2021 02:32:41 HTTP "GET" "/dashboard/targethealthhistory/57b0f395-60a1-4202-b5ab-095a1d28687b" responded 200 in 62.6791 ms 
+ 05/04/2021 02:32:43 HTTP "GET" "/Dashboard" responded 200 in 8.0123 ms 
+ 05/04/2021 02:33:10 HTTP "GET" "/hangfire" responded 200 in 28.9579 ms 
+ 05/04/2021 02:33:10 HTTP "GET" "/hangfire/css17220" responded 200 in 21.4959 ms 
+ 05/04/2021 02:33:10 HTTP "GET" "/hangfire/js17220" responded 200 in 25.8497 ms 
+ 05/04/2021 02:33:11 HTTP "GET" "/hangfire/fonts/glyphicons-halflings-regular/woff2" responded 200 in 3.8135 ms 
+ 05/04/2021 02:33:12 HTTP "GET" "/hangfire/recurring" responded 200 in 55.1911 ms 
+ 05/04/2021 02:33:12 HTTP "GET" "/hangfire/css17220" responded 200 in 10.3159 ms 
+ 05/04/2021 02:33:12 HTTP "GET" "/hangfire/js17220" responded 200 in 12.3962 ms 
+ 05/04/2021 02:33:12 HTTP "GET" "/hangfire/fonts/glyphicons-halflings-regular/woff2" responded 200 in 1.8441 ms 
+ 05/04/2021 02:33:14 Recurring job error for URL "http://test1.com" 
+ 05/04/2021 02:33:57 HTTP "POST" "/hangfire/stats" responded 200 in 42288.2503 ms 
+ 05/04/2021 02:33:57 HTTP "GET" "/hangfire/jobs/enqueued" responded 200 in 37459.9819 ms 
+ 05/04/2021 02:33:57 HTTP "GET" "/hangfire/css17220" responded 200 in 7.8319 ms 
+ 05/04/2021 02:33:57 HTTP "GET" "/hangfire/js17220" responded 200 in 8.7858 ms 
+ 05/04/2021 02:33:57 HTTP "GET" "/hangfire/fonts/glyphicons-halflings-regular/woff2" responded 200 in 0.5724 ms 
+ 05/04/2021 02:33:59 HTTP "POST" "/hangfire/stats" responded 200 in 2.2447 ms 
+ 05/04/2021 02:34:02 HTTP "POST" "/hangfire/stats" responded 200 in 6.2080 ms 
+ 05/04/2021 02:34:04 HTTP "POST" "/hangfire/stats" responded 200 in 1.7731 ms 
+ 05/04/2021 02:34:06 Recurring job error for URL "http://test1.com" 
+ 05/04/2021 02:34:49 HTTP "GET" "/dashboard/targethealthhistory/57b0f395-60a1-4202-b5ab-095a1d28687b" responded 200 in 42.3375 ms 
+ 05/04/2021 02:34:49 HTTP "POST" "/hangfire/stats" responded 500 in 46.9720 ms 
+ Microsoft.AspNetCore.Connections.ConnectionResetException: The client has disconnected
+ ---> System.Runtime.InteropServices.COMException (0x800704CD): An operation was attempted on a nonexistent network connection. (0x800704CD)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.IIS.Core.IO.AsyncIOOperation.GetResult(Int16 token)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContext.ReadBody()
+   at System.IO.Pipelines.PipeCompletion.ThrowLatchedException()
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContext.ReadAsync(Memory`1 memory, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.IIS.Core.HttpRequestStream.ReadAsyncInternal(Memory`1 buffer, CancellationToken cancellationToken)
+   at System.IO.Pipelines.StreamPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.WebUtilities.FormPipeReader.ReadFormAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Http.Features.FormFeature.InnerReadFormAsync(CancellationToken cancellationToken)
+   at Hangfire.Dashboard.AspNetCoreDashboardRequest.GetFormValuesAsync(String key)
+   at Hangfire.Dashboard.JsonStats.Dispatch(DashboardContext context)
+   at Hangfire.Dashboard.AspNetCoreDashboardMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+05/04/2021 02:34:49 An unhandled exception has occurred while executing the request. 
+ Microsoft.AspNetCore.Connections.ConnectionResetException: The client has disconnected
+ ---> System.Runtime.InteropServices.COMException (0x800704CD): An operation was attempted on a nonexistent network connection. (0x800704CD)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.IIS.Core.IO.AsyncIOOperation.GetResult(Int16 token)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContext.ReadBody()
+   at System.IO.Pipelines.PipeCompletion.ThrowLatchedException()
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContext.ReadAsync(Memory`1 memory, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.IIS.Core.HttpRequestStream.ReadAsyncInternal(Memory`1 buffer, CancellationToken cancellationToken)
+   at System.IO.Pipelines.StreamPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.WebUtilities.FormPipeReader.ReadFormAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Http.Features.FormFeature.InnerReadFormAsync(CancellationToken cancellationToken)
+   at Hangfire.Dashboard.AspNetCoreDashboardRequest.GetFormValuesAsync(String key)
+   at Hangfire.Dashboard.JsonStats.Dispatch(DashboardContext context)
+   at Hangfire.Dashboard.AspNetCoreDashboardMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+05/04/2021 02:34:49 HTTP "POST" "/hangfire/stats" responded 405 in 0.6358 ms 
+ 05/04/2021 02:34:49 An exception was thrown attempting to execute the error handler. 
+ System.ArgumentException: The path in 'value' must start with '/'. (Parameter 'value')
+   at Microsoft.AspNetCore.Http.PathString..ctor(String value)
+   at Microsoft.AspNetCore.Builder.StatusCodePagesExtensions.<>c__DisplayClass6_0.<<UseStatusCodePagesWithReExecute>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+05/04/2021 02:34:49 An unhandled exception has occurred while executing the request. 
+ Microsoft.AspNetCore.Connections.ConnectionResetException: The client has disconnected
+ ---> System.Runtime.InteropServices.COMException (0x800704CD): An operation was attempted on a nonexistent network connection. (0x800704CD)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.IIS.Core.IO.AsyncIOOperation.GetResult(Int16 token)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContext.ReadBody()
+   at System.IO.Pipelines.PipeCompletion.ThrowLatchedException()
+   at System.IO.Pipelines.Pipe.GetReadResult(ReadResult& result)
+   at System.IO.Pipelines.Pipe.ReadAsync(CancellationToken token)
+   at System.IO.Pipelines.Pipe.DefaultPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContext.ReadAsync(Memory`1 memory, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.IIS.Core.HttpRequestStream.ReadAsyncInternal(Memory`1 buffer, CancellationToken cancellationToken)
+   at System.IO.Pipelines.StreamPipeReader.ReadAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.WebUtilities.FormPipeReader.ReadFormAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Http.Features.FormFeature.InnerReadFormAsync(CancellationToken cancellationToken)
+   at Hangfire.Dashboard.AspNetCoreDashboardRequest.GetFormValuesAsync(String key)
+   at Hangfire.Dashboard.JsonStats.Dispatch(DashboardContext context)
+   at Hangfire.Dashboard.AspNetCoreDashboardMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+05/04/2021 02:35:04 Recurring job error for URL "http://test1.com" 
+ 05/04/2021 02:35:07 HTTP "GET" "/hangfire" responded 200 in 4.3101 ms 
+ 05/04/2021 02:35:07 HTTP "GET" "/hangfire/css17220" responded 200 in 10.0088 ms 
+ 05/04/2021 02:35:07 HTTP "GET" "/hangfire/js17220" responded 200 in 18.1330 ms 
+ 05/04/2021 02:35:07 HTTP "GET" "/hangfire/fonts/glyphicons-halflings-regular/woff2" responded 200 in 0.6856 ms 
+ 05/04/2021 02:35:09 HTTP "GET" "/Log" responded 200 in 4.3406 ms 
+ 05/04/2021 02:35:11 HTTP "GET" "/log/detail?fileName=log20210504" responded 200 in 16.0791 ms 
+ 05/04/2021 02:35:53 HTTP "GET" "/Log" responded 200 in 40.1953 ms 
+ 05/04/2021 02:35:54 HTTP "GET" "/log/detail?fileName=log20210504" responded 200 in 26.6967 ms 
+ 05/04/2021 02:36:04 Recurring job error for URL "http://test1.com" 
+ 05/04/2021 02:36:13 HTTP "GET" "/Log" responded 200 in 2.3224 ms 
+ 05/04/2021 02:36:15 HTTP "GET" "/" responded 302 in 1.5313 ms 
+ 05/04/2021 02:36:15 HTTP "GET" "/dashboard" responded 200 in 5.4207 ms 
+ 05/04/2021 02:36:17 HTTP "GET" "/dashboard/target/57b0f395-60a1-4202-b5ab-095a1d28687b" responded 200 in 52.2268 ms 
+ 05/04/2021 02:36:27 JobId "8a4a686f-ea82-46f4-bcd8-6cee11ed92ec" updated by "hasansimsek1@gmail.com". 
+ 05/04/2021 02:36:27 "hasansimsek1@gmail.com" updated target "test2". 
+ 05/04/2021 02:36:27 HTTP "POST" "/dashboard/target/57b0f395-60a1-4202-b5ab-095a1d28687b" responded 302 in 44.6570 ms 
+ 05/04/2021 02:36:27 HTTP "GET" "/Dashboard" responded 200 in 4.5476 ms 
+ 05/04/2021 02:36:29 HTTP "GET" "/dashboard/target/57b0f395-60a1-4202-b5ab-095a1d28687b" responded 200 in 10.9021 ms 
+ 05/04/2021 02:36:33 HTTP "GET" "/Dashboard" responded 200 in 6.7540 ms 
+ 05/04/2021 02:36:34 HTTP "GET" "/dashboard/targethealthhistory/57b0f395-60a1-4202-b5ab-095a1d28687b" responded 200 in 11.2323 ms 
+ 05/04/2021 02:36:37 HTTP "GET" "/Dashboard" responded 200 in 6.1642 ms 
+ 05/04/2021 02:36:42 HTTP "GET" "/Dashboard/NewTarget" responded 200 in 2.7578 ms 
+ 05/04/2021 02:36:47 HTTP "GET" "/Log" responded 200 in 2.1572 ms 
+ 05/04/2021 02:36:49 HTTP "GET" "/hangfire" responded 200 in 13.2704 ms 
+ 05/04/2021 02:36:49 HTTP "GET" "/hangfire/css17220" responded 200 in 4.8567 ms 
+ 05/04/2021 02:36:49 HTTP "GET" "/hangfire/js17220" responded 200 in 12.7384 ms 
+ 05/04/2021 02:36:49 HTTP "GET" "/hangfire/fonts/glyphicons-halflings-regular/woff2" responded 200 in 4.9954 ms 
+ 05/04/2021 02:36:52 "hasansimsek1@gmail.com" logged out successfully. 
+ 05/04/2021 02:36:52 HTTP "POST" "/Account/Logout?returnUrl=%2F" responded 302 in 2.2106 ms 
+ 05/04/2021 02:36:52 HTTP "GET" "/" responded 200 in 0.6069 ms 
+ 05/04/2021 02:36:55 HTTP "GET" "/hangfire" responded 401 in 0.2580 ms 
+ 05/04/2021 02:36:55 An unhandled exception has occurred while executing the request. 
+ System.ArgumentException: The path in 'value' must start with '/'. (Parameter 'value')
+   at Microsoft.AspNetCore.Http.PathString..ctor(String value)
+   at Microsoft.AspNetCore.Builder.StatusCodePagesExtensions.<>c__DisplayClass6_0.<<UseStatusCodePagesWithReExecute>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+05/04/2021 02:36:55 HTTP "GET" "/hangfire" responded 500 in 58.9764 ms 
+ 05/04/2021 02:36:57 HTTP "GET" "/hangfire" responded 401 in 0.2358 ms 
+ 05/04/2021 02:36:57 An unhandled exception has occurred while executing the request. 
+ System.ArgumentException: The path in 'value' must start with '/'. (Parameter 'value')
+   at Microsoft.AspNetCore.Http.PathString..ctor(String value)
+   at Microsoft.AspNetCore.Builder.StatusCodePagesExtensions.<>c__DisplayClass6_0.<<UseStatusCodePagesWithReExecute>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.StatusCodePagesMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+05/04/2021 02:36:57 HTTP "GET" "/hangfire" responded 500 in 1.1996 ms 
+ 
