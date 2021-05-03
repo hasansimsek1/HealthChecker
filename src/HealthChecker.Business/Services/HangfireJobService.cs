@@ -74,9 +74,7 @@ namespace HealthChecker.Business.Services
 
             if (response.Wait(TimeSpan.FromSeconds(45)))
             {
-                var responseStatus = response.Result;
-
-                if (responseStatus.IsSuccessful)
+                if (response.Result.IsSuccessful)
                 {
                     InsertHealthCheckRecord(true, targetId, userId, "Success");
                     _logger.LogInformation("Target returned success result for {targetUrl}", url);
@@ -94,14 +92,16 @@ namespace HealthChecker.Business.Services
         /// </summary>
         private void InsertHealthCheckRecord(bool isSuccess, string targetId, string userId, string description)
         {
-            _healthRepository.InsertAsync(
-            new HealthCheckDto
-            {
-                IsSuccessful = isSuccess,
-                TargetId = targetId,
-                UserId = userId,
-                StatusExplanation = description
-            });
+            var result = _healthRepository.InsertAsync(
+                new HealthCheckDto
+                {
+                    IsSuccessful = isSuccess,
+                    TargetId = targetId,
+                    UserId = userId,
+                    StatusExplanation = description
+                });
+
+            result.Wait();
         }
 
         /// <summary>
@@ -111,10 +111,10 @@ namespace HealthChecker.Business.Services
         {
             try
             {
-                NetworkCredential credentials = new NetworkCredential("healthchecker007@gmail.com", "healthcheck.007");
+                var credentials = new NetworkCredential("healthchecker007@gmail.com", "healthcheck.007");
 
-                using SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
-                using MailMessage msg = new MailMessage
+                using var smtpClient = new SmtpClient("smtp.gmail.com", 587);
+                using var msg = new MailMessage
                 {
                     From = new MailAddress("healthchecker007@gmail.com"),
                     Subject = "Your website is down!",

@@ -8,9 +8,9 @@ namespace HealthChecker.UnitTests.BusinessTests
         [Fact]
         public void AutoMapperConfiguration_ShouldReturnMappingConfigWith6Mappings()
         {
-            int expectedValue = 6;
+            var expectedValue = 6;
 
-            AutoMapperConfiguration autoMapperConfiguration = new AutoMapperConfiguration();
+            var autoMapperConfiguration = new AutoMapperConfiguration();
             var config = autoMapperConfiguration.Configure();
             var typeMaps = config.GetAllTypeMaps();
 

@@ -3,7 +3,7 @@
 namespace HealthChecker.Persistence.Extensions
 {
     /// <summary>
-    /// THIS CLASS IS DEPRECATED. THIS APP USES AUTO MAPPER INSTEAD.
+    /// THIS CLASS IS DEPRECATED. THIS APP USES AUTOMAPPER INSTEAD.
     /// This class makes the conversion between Entity and Dto classes.
     /// </summary>
     public static class EntityExtensions

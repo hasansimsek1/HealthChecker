@@ -36,7 +36,7 @@ namespace HealthChecker.Presentation.Web.Mvc.Controllers
         {
             try
             {
-                string userName = User.Identity.Name;
+                var userName = User.Identity.Name;
                 await _signInManager.SignOutAsync();
                 _logger.LogInformation("{userName} logged out successfully.", userName);
                 return RedirectToAction("index", "home");
@@ -75,7 +75,7 @@ namespace HealthChecker.Presentation.Web.Mvc.Controllers
                         return RedirectToAction("index", "dashboard");
                     }
 
-                    string loginResult = $@"IsLockedOut:{result.IsLockedOut}, RequiresTwoFactor:{result.RequiresTwoFactor}, IsNotAllowed:{result.IsNotAllowed}";
+                    var loginResult = $@"IsLockedOut:{result.IsLockedOut}, RequiresTwoFactor:{result.RequiresTwoFactor}, IsNotAllowed:{result.IsNotAllowed}";
                     _logger.LogInformation("Invalid login attempt by {userName}. Login result: {loginResult}", User.Identity.Name, loginResult);
 
                     ModelState.AddModelError(string.Empty, "Invalid Login Attempt");

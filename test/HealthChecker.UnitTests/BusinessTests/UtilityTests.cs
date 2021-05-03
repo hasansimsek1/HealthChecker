@@ -32,7 +32,7 @@ namespace HealthChecker.UnitTests.BusinessTests
         [InlineData("https://mail.google.com/?", true)]
         public void ValidUrlAttribute_ShouldValidateUrlStrings(string url, bool expected)
         {
-            ValidUrlAttribute validUrlAttribute = new ValidUrlAttribute();
+            var validUrlAttribute = new ValidUrlAttribute();
 
             Assert.Equal(expected, validUrlAttribute.IsValid(url));
         }
@@ -55,7 +55,7 @@ namespace HealthChecker.UnitTests.BusinessTests
         [InlineData("ftp://google.com", false)]
         public void ValidUrlAttribute_ShouldNotValidateUrlStrings(string url, bool expected)
         {
-            ValidUrlAttribute validUrlAttribute = new ValidUrlAttribute();
+            var validUrlAttribute = new ValidUrlAttribute();
 
             Assert.Equal(expected, validUrlAttribute.IsValid(url));
         }

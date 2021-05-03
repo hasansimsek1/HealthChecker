@@ -22,7 +22,7 @@ namespace HealthChecker.Persistence.SqlServer
         {
             try
             {
-                IConfigurationRoot configuration = new ConfigurationBuilder()
+                var configuration = new ConfigurationBuilder()
                     .SetBasePath(Directory.GetCurrentDirectory())
                     .AddJsonFile("appsettings.json")
                     .Build();

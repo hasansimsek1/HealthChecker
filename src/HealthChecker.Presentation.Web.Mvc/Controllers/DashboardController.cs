@@ -88,7 +88,7 @@ namespace HealthChecker.Presentation.Web.Mvc.Controllers
 
                 var target = await _targetService.GetTargetAsync(id, User);
 
-                UpdateTargetBindingModel updateTargetBindingModel = new UpdateTargetBindingModel
+                var updateTargetBindingModel = new UpdateTargetBindingModel
                 {
                     Id = target.Id,
                     MonitoringInterval = target.MonitoringInterval,

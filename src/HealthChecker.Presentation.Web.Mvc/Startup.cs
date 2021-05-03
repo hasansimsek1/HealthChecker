@@ -44,8 +44,7 @@ namespace HealthChecker.Presentation.Web.Mvc
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
-            app.UseHangfireDashboard(
-                "/hangfire",
+            app.UseHangfireDashboard("/hangfire",
                 new DashboardOptions
                 {
                     Authorization = new[] { new HangfireDashboardAuthFilter() }

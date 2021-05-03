@@ -31,9 +31,9 @@ namespace HealthChecker.Presentation.Web.Mvc.Controllers
         {
             try
             {
-                string projectPath = _env.ContentRootPath;
+                var projectPath = _env.ContentRootPath;
                 var files = Directory.GetFiles(projectPath + "/logs/", "*.txt");
-                List<string> fileList = new List<string>();
+                var fileList = new List<string>();
                 foreach (var filePath in files)
                 {
                     fileList.Add(Path.GetFileNameWithoutExtension(filePath));
@@ -86,8 +86,8 @@ namespace HealthChecker.Presentation.Web.Mvc.Controllers
         /// </summary>
         private string ReadTheFile(string filePath)
         {
-            using FileStream fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-            using StreamReader streamReader = new StreamReader(fileStream);
+            using var fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+            using var streamReader = new StreamReader(fileStream);
             return streamReader.ReadToEnd();
         }
 

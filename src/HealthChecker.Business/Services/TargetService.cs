@@ -48,11 +48,11 @@ namespace HealthChecker.Business.Services
         /// </summary>
         public async Task AddTargetAsync(NewTargetBindingModel model, ClaimsPrincipal user)
         {
-            string jobId = Guid.NewGuid().ToString();
-            string userId = _userService.GetUserId(user);
-            string targetId = Guid.NewGuid().ToString();
+            var jobId = Guid.NewGuid().ToString();
+            var userId = _userService.GetUserId(user);
+            var targetId = Guid.NewGuid().ToString();
 
-            TargetDto targetAppDto = new TargetDto
+            var targetAppDto = new TargetDto
             {
                 Id = targetId,
                 MonitoringInterval = model.MonitoringInterval,
@@ -109,7 +109,7 @@ namespace HealthChecker.Business.Services
                 return null;
             }
 
-            TargetViewModel targetViewModel = new TargetViewModel
+            var targetViewModel = new TargetViewModel
             {
                 Id = target.Id,
                 MonitoringInterval = target.MonitoringInterval,
@@ -128,7 +128,7 @@ namespace HealthChecker.Business.Services
         {
             var userId = _userService.GetUserId(user);
 
-            TargetDto targetDto = new TargetDto
+            var targetDto = new TargetDto
             {
                 Id = model.Id,
                 MonitoringInterval = model.MonitoringInterval,
