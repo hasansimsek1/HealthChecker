@@ -2,9 +2,6 @@
 
 namespace HealthChecker.Persistence.Dtos
 {
-
-
-
     /// <summary>
     /// Base class for DTO classes that reflects <see cref="EntityBase"/>.
     /// 
@@ -23,35 +20,20 @@ namespace HealthChecker.Persistence.Dtos
     /// </summary>
     public class DtoBase : IDtoWithCommonProperties
     {
-
-
-
         /// <summary>
         /// Id of the related entity. Initializes with auto-property initializer with a value of Guid.NewGuid
         /// </summary>
         public string Id { get; set; } = Guid.NewGuid().ToString();
-
-
-
-
 
         /// <summary>
         /// Creation date of the related entity. Initializes with auto-property initializer with a value of <see cref="DateTime.Now"/>
         /// </summary>
         public DateTime DateAdded { get; set; } = DateTime.Now;
 
-
-
-
-
         /// <summary>
         /// Modification date of the related entity. Initializes with auto-property initializer with a value of <see cref="DateTime.Now"/>
         /// </summary>
         public DateTime DateModified { get; set; } = DateTime.Now;
-
-
-
-
 
         /// <summary>
         /// Soft-delete operation status of the related entity. Initializes with auto-property initializer with value of <see cref="false"/>

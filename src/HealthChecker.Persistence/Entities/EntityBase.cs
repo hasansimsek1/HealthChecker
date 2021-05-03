@@ -2,9 +2,6 @@
 
 namespace HealthChecker.Persistence.Entities
 {
-
-
-
     /// <summary>
     /// Base class for the entities that have common properties.
     /// 
@@ -23,35 +20,20 @@ namespace HealthChecker.Persistence.Entities
 
     public class EntityBase : IEntityWithCommonProperties
     {
-
-
-
         /// <summary>
         /// Id of the entity. Initialized with auto-property initializer with value of <see cref="Guid.NewGuid"/>
         /// </summary>
         public string Id { get; set; } = Guid.NewGuid().ToString();
-
-
-
-
 
         /// <summary>
         /// Creation date of the entity. Initialized with auto-property initializer with value of <see cref="DateTime.Now"/>
         /// </summary>
         public DateTime DateAdded { get; set; } = DateTime.Now;
 
-
-
-
-
         /// <summary>
         /// Modification date of the entity. Initialized with auto-property initializer with value of <see cref="DateTime.Now"/>
         /// </summary>
         public DateTime DateModified { get; set; } = DateTime.Now;
-
-
-
-
 
         /// <summary>
         /// Soft-delete operation status of the entity. Initialized with auto-property initializer with value of <see cref="false"/>

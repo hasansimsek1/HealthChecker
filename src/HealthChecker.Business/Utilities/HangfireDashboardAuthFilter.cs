@@ -2,22 +2,14 @@
 
 namespace HealthChecker.Business.Utilities
 {
-
-
-
     /// <summary>
     /// Authetication filter for Hangfire Dashboard
     /// </summary>
     public class HangfireDashboardAuthFilter : IDashboardAuthorizationFilter
     {
-
-
-
         /// <summary>
         /// Gets fired when a user navigates to the /hangfire URL in the app.
         /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
         public bool Authorize(DashboardContext context)
         {
             try

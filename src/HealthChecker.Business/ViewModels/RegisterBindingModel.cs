@@ -2,17 +2,11 @@
 
 namespace HealthChecker.Business.ViewModels
 {
-
-
-
     /// <summary>
     /// Model for user to registers to the app.
     /// </summary>
     public class RegisterBindingModel
     {
-
-
-
         /// <summary>
         /// Email of the user that is also will be used as username.
         /// </summary>
@@ -20,20 +14,12 @@ namespace HealthChecker.Business.ViewModels
         [EmailAddress]
         public string Email { get; set; }
 
-
-
-
-
         /// <summary>
         /// Password of the user.
         /// </summary>
         [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
-
-
-
-
 
         /// <summary>
         /// Password confirmation.

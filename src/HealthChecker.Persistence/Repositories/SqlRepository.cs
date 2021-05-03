@@ -12,8 +12,6 @@ using System.Threading.Tasks;
 
 namespace HealthChecker.Persistence.Repositories
 {
-
-
     /// <summary>
     /// Generic repository pattern implementation for CRUD operations on Sql Server databases. 
     /// Responsible for operation such as filtering soft-deleted records and mapping between entites and data transfer objects.
@@ -33,10 +31,6 @@ namespace HealthChecker.Persistence.Repositories
         private readonly IMapper _mapper;
         private DbSet<TEntity> _entity;
 
-
-
-
-
         /// <summary>
         /// Constructor with <see cref="DbContextOptions{T}"/> parameter that initializes <see cref="AppDbContext"/> with incoming options.
         /// 
@@ -50,10 +44,6 @@ namespace HealthChecker.Persistence.Repositories
             _entity = _dbContext.Set<TEntity>();
             _mapper = mapper;
         }
-
-
-
-
 
         /// <summary>
         /// Retrieves all entity records.
@@ -72,10 +62,6 @@ namespace HealthChecker.Persistence.Repositories
                 throw;
             }
         }
-
-
-
-
 
         /// <summary>
         /// Retrieves the entity with the specified Id.
@@ -96,10 +82,6 @@ namespace HealthChecker.Persistence.Repositories
             }
         }
 
-
-
-
-
         /// <summary>
         /// Retrieves entities with specified filters.
         /// </summary>
@@ -118,10 +100,6 @@ namespace HealthChecker.Persistence.Repositories
                 throw;
             }
         }
-
-
-
-
 
         /// <summary>
         /// Inserts new entity.
@@ -151,10 +129,6 @@ namespace HealthChecker.Persistence.Repositories
                 throw;
             }
         }
-
-
-
-
 
         /// <summary>
         /// Updates the entity.
@@ -186,11 +160,6 @@ namespace HealthChecker.Persistence.Repositories
                 throw;
             }
         }
-
-
-
-
-
 
         /// <summary>
         /// Soft-deletes the entity.
@@ -224,10 +193,6 @@ namespace HealthChecker.Persistence.Repositories
             }
         }
 
-
-
-
-
         /// <summary>
         /// Wrapper for DbContex.SaveCahngesAsync() method.
         /// </summary>
@@ -251,34 +216,5 @@ namespace HealthChecker.Persistence.Repositories
             target.Url = targetDto.Url;
             await db.SaveChangesAsync();
         }
-
-
-
-
-
-        //private bool disposed = false;
-
-        //public void Dispose()
-        //{
-        //    Dispose(true);
-        //    GC.SuppressFinalize(this);
-        //}
-
-        //protected virtual void Dispose(bool disposing)
-        //{
-        //    if (!disposed)
-        //    {
-        //        if (disposing)
-        //        {
-        //            if (_dbContext != null)
-        //            {
-        //                _dbContext.Dispose();
-        //                _dbContext = null;
-        //            }
-        //        }
-
-        //        disposed = true;
-        //    }
-        //}
     }
 }

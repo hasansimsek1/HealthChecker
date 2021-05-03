@@ -3,21 +3,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace HealthChecker.Presentation.Web.Mvc.Controllers
 {
-
-
     public class HomeController : Controller
     {
-
-
         private readonly SignInManager<IdentityUser> _signInManager;
 
         public HomeController(SignInManager<IdentityUser> signInManager)
         {
             _signInManager = signInManager;
         }
-
-
-
 
         public IActionResult Index()
         {

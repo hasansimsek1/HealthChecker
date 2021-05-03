@@ -1,15 +1,10 @@
 ﻿namespace HealthChecker.Business.Contracts
 {
-
-
     /// <summary>
     /// Contract for background jobs.
     /// </summary>
     public interface IBackgroundJobService
     {
-
-
-
         /// <summary>
         /// A job must check target URL's status periodically. This method creates or updates a job according to if there is a job with this ID or not.
         /// </summary>
@@ -20,10 +15,6 @@
         /// <param name="userId">ID of the current application user.</param>
         /// <param name="userEmail">Email of the current application user. We will make use of this email to notify if target url is dowsn.</param>
         void SaveHealtCheckJob(string url, string jobId, int intervalInMinutes, string targetId, string userId, string userEmail);
-
-
-
-
 
         /// <summary>
         /// Deletes the recurring job with the specified ID.

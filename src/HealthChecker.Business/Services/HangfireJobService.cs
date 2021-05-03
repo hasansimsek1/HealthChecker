@@ -12,34 +12,20 @@ using System.Text;
 
 namespace HealthChecker.Business.Services
 {
-
-
-
     /// <summary>
     /// Implementation of IBackgroundJobService interface for Hangfire library.
     /// </summary>
     public class HangfireJobService : IBackgroundJobService
     {
-
-
-
         /// <summary>
         /// Built in Logger interface that injected to here.
         /// </summary>
         private readonly ILogger<HangfireJobService> _logger;
 
-
-
-
-
         /// <summary>
         /// Injected health repository to be able to interract with database records.
         /// </summary>
         private readonly ICrudRepository<HealthCheck, HealthCheckDto> _healthRepository;
-
-
-
-
 
         /// <summary>
         /// Constructor that injects logger and health repository
@@ -52,19 +38,9 @@ namespace HealthChecker.Business.Services
             _healthRepository = healthRepository;
         }
 
-
-
-
-
         /// <summary>
         /// If there is no existing job with the specified jobId creates new one. If There is existing job, it updates the existing.
         /// </summary>
-        /// <param name="url"></param>
-        /// <param name="jobId"></param>
-        /// <param name="intervalInMinutes"></param>
-        /// <param name="targetId"></param>
-        /// <param name="userId"></param>
-        /// <param name="userEmail"></param>
         public void SaveHealtCheckJob(string url, string jobId, int intervalInMinutes, string targetId, string userId, string userEmail)
         {
             try
@@ -78,30 +54,17 @@ namespace HealthChecker.Business.Services
             }
         }
 
-
-
-
-
         /// <summary>
         /// Deletes the recurring job with the specified jobId.
         /// </summary>
-        /// <param name="jobId"></param>
         public void DeleteRecurringJob(string jobId)
         {
             RecurringJob.RemoveIfExists(jobId);
         }
 
-
-
-
-
         /// <summary>
         /// The method that is being periodically fired by Hangfire. It makes HTTP request to the specified URL. If response is successful, it will insert a success record to the database. If response is not successful then it sends email to the specified userEmail and inserts error record to the database.
         /// </summary>
-        /// <param name="url"></param>
-        /// <param name="targetId"></param>
-        /// <param name="userId"></param>
-        /// <param name="userEmail"></param>
         [AutomaticRetry(Attempts = 0)]
         public void Request(string url, string targetId, string userId, string userEmail)
         {
@@ -126,17 +89,9 @@ namespace HealthChecker.Business.Services
             InsertHealthCheckRecord(false, targetId, userId, "Failure");
         }
 
-
-
-
-
         /// <summary>
         /// Helper method that job inserts success or failure record to the database.
         /// </summary>
-        /// <param name="isSuccess"></param>
-        /// <param name="targetId"></param>
-        /// <param name="userId"></param>
-        /// <param name="description"></param>
         private void InsertHealthCheckRecord(bool isSuccess, string targetId, string userId, string description)
         {
             _healthRepository.InsertAsync(
@@ -145,19 +100,13 @@ namespace HealthChecker.Business.Services
                 IsSuccessful = isSuccess,
                 TargetId = targetId,
                 UserId = userId,
-                StatusExplanation = description //$"Failure. StatusCode:{response.Result.StatusCode}"
+                StatusExplanation = description
             });
         }
-
-
-
-
 
         /// <summary>
         /// Sends an allert indicating an error to the specified email. This method is being fired by the health check job.
         /// </summary>
-        /// <param name="url"></param>
-        /// <param name="emailTo"></param>
         public void SendEmail(string url, string emailTo)
         {
             try

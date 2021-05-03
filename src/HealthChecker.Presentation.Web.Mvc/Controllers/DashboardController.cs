@@ -8,9 +8,6 @@ using System.Threading.Tasks;
 
 namespace HealthChecker.Presentation.Web.Mvc.Controllers
 {
-
-
-
     [Authorize]
     public class DashboardController : Controller
     {
@@ -20,22 +17,15 @@ namespace HealthChecker.Presentation.Web.Mvc.Controllers
         /// <summary>
         /// Constructor for Dependency Injection system. Dependencies: ITargetService, ILogger.
         /// </summary>
-        /// <param name="targetService"></param>
-        /// <param name="logger"></param>
         public DashboardController(ITargetService targetService, ILogger<DashboardController> logger)
         {
             _targetService = targetService;
             _logger = logger;
         }
 
-
-
-
-
         /// <summary>
         /// Sends the dashboard page to the client.
         /// </summary>
-        /// <returns></returns>
         public async Task<IActionResult> Index()
         {
             try
@@ -50,29 +40,18 @@ namespace HealthChecker.Presentation.Web.Mvc.Controllers
             }
         }
 
-
-
-
-
         /// <summary>
         /// Sends the new target creation page to the client.
         /// </summary>
-        /// <returns></returns>
         [HttpGet]
         public IActionResult NewTarget()
         {
             return View();
         }
 
-
-
-
-
         /// <summary>
         /// Creates new target.
         /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> NewTarget(NewTargetBindingModel model)
         {
@@ -94,15 +73,9 @@ namespace HealthChecker.Presentation.Web.Mvc.Controllers
             }
         }
 
-
-
-
-
         /// <summary>
         /// Sends target detail page to the client.
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> Target(string id)
         {
@@ -132,15 +105,9 @@ namespace HealthChecker.Presentation.Web.Mvc.Controllers
             }
         }
 
-
-
-
-
         /// <summary>
         /// Updates the specified target.
         /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Target(UpdateTargetBindingModel model)
         {
@@ -162,15 +129,9 @@ namespace HealthChecker.Presentation.Web.Mvc.Controllers
             }
         }
 
-
-
-
-
         /// <summary>
         /// Sends target health check history page to the client.
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> TargetHealthHistory(string id)
         {
@@ -197,15 +158,9 @@ namespace HealthChecker.Presentation.Web.Mvc.Controllers
             }
         }
 
-
-
-
-
         /// <summary>
         /// Deletes the specified target.
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> DeleteTarget(string id)
         {

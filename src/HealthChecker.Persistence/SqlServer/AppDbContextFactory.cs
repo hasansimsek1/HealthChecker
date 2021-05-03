@@ -5,9 +5,6 @@ using System.IO;
 
 namespace HealthChecker.Persistence.SqlServer
 {
-
-
-
     /// <summary>
     /// Architecture of this project needs to implement IDesignTimeDbContextFactory. 
     /// 
@@ -21,8 +18,6 @@ namespace HealthChecker.Persistence.SqlServer
     /// </summary>
     public class AppDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
     {
-
-
         public AppDbContext CreateDbContext(string[] args)
         {
             try

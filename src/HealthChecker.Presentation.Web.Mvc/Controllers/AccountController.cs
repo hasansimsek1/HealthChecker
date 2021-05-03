@@ -8,9 +8,6 @@ using System.Threading.Tasks;
 
 namespace HealthChecker.Presentation.Web.Mvc.Controllers
 {
-
-
-
     /// <summary>
     /// Authentication operations for the app.
     /// </summary>
@@ -20,16 +17,9 @@ namespace HealthChecker.Presentation.Web.Mvc.Controllers
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly ILogger<AccountController> _logger;
 
-
-
-
-
         /// <summary>
         /// Constructor for Dependency Injection. Dependencies: UserManager, SignInManager, ILogger.
         /// </summary>
-        /// <param name="userManager"></param>
-        /// <param name="signInManager"></param>
-        /// <param name="logger"></param>
         public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, ILogger<AccountController> logger)
         {
             _userManager = userManager;
@@ -37,14 +27,9 @@ namespace HealthChecker.Presentation.Web.Mvc.Controllers
             _logger = logger;
         }
 
-
-
-
-
         /// <summary>
         /// Logs the user out.
         /// </summary>
-        /// <returns></returns>
         [Authorize]
         [HttpPost]
         public async Task<IActionResult> Logout()
@@ -63,29 +48,18 @@ namespace HealthChecker.Presentation.Web.Mvc.Controllers
             }
         }
 
-
-
-
-
         /// <summary>
         /// Send the login page to the client.
         /// </summary>
-        /// <returns></returns>
         [HttpGet]
         public IActionResult Login()
         {
             return View();
         }
 
-
-
-
-
         /// <summary>
         /// Logs the user in.
         /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Login(LoginBindingModel model)
         {
@@ -116,29 +90,18 @@ namespace HealthChecker.Presentation.Web.Mvc.Controllers
             }
         }
 
-
-
-
-
         /// <summary>
         /// Sends the registration page to the client.
         /// </summary>
-        /// <returns></returns>
         [HttpGet]
         public IActionResult Register()
         {
             return View();
         }
 
-
-
-
-
         /// <summary>
         /// Registers new user.
         /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Register(RegisterBindingModel model)
         {
@@ -181,14 +144,9 @@ namespace HealthChecker.Presentation.Web.Mvc.Controllers
             }
         }
 
-
-
-
-
         /// <summary>
         /// Access denied page that is bein used by Identity membership system.
         /// </summary>
-        /// <returns></returns>
         [HttpGet]
         public IActionResult AccessDenied()
         {

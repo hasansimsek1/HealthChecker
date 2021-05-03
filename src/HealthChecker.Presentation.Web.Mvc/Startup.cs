@@ -10,24 +10,14 @@ using Serilog;
 
 namespace HealthChecker.Presentation.Web.Mvc
 {
-
-
-
     public class Startup
     {
-
-
-
         public IConfiguration Configuration { get; }
 
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
-
-
-
-
 
         public void ConfigureServices(IServiceCollection services)
         {
@@ -36,10 +26,6 @@ namespace HealthChecker.Presentation.Web.Mvc
             services.AddRazorPages();
             services.AddAppServices(Configuration);
         }
-
-
-
-
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {

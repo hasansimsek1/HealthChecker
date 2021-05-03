@@ -9,9 +9,6 @@ using System.Text.RegularExpressions;
 
 namespace HealthChecker.Presentation.Web.Mvc.Controllers
 {
-
-
-
     /// <summary>
     /// This application shows the app logs to the user. With this controller, user navigates to list of log files and sees their details.
     /// </summary>
@@ -27,14 +24,9 @@ namespace HealthChecker.Presentation.Web.Mvc.Controllers
             _logger = logger;
         }
 
-
-
-
-
         /// <summary>
         /// Sends a list page containing list of log files to the client.
         /// </summary>
-        /// <returns></returns>
         public IActionResult Index()
         {
             try
@@ -56,15 +48,9 @@ namespace HealthChecker.Presentation.Web.Mvc.Controllers
             }
         }
 
-
-
-
-
         /// <summary>
         /// Sends the content of the specified log file to the client.
         /// </summary>
-        /// <param name="fileName"></param>
-        /// <returns></returns>
         public IActionResult Detail(string fileName)
         {
             try
@@ -86,30 +72,18 @@ namespace HealthChecker.Presentation.Web.Mvc.Controllers
             }
         }
 
-
-
-
-
         /// <summary>
         /// Helper method to generate the path of the file with a little bit security in mind.
         /// </summary>
-        /// <param name="fileName"></param>
-        /// <returns></returns>
         private string GetFilePath(string fileName)
         {
             fileName = Regex.Replace(fileName, "[^a-zA-Z0-9]", string.Empty);
             return _env.ContentRootPath + "/logs/" + fileName + ".txt";
         }
 
-
-
-
-
         /// <summary>
         /// Helper method to read the content of the log file.
         /// </summary>
-        /// <param name="filePath"></param>
-        /// <returns></returns>
         private string ReadTheFile(string filePath)
         {
             using FileStream fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
@@ -117,15 +91,9 @@ namespace HealthChecker.Presentation.Web.Mvc.Controllers
             return streamReader.ReadToEnd();
         }
 
-
-
-
-
         /// <summary>
         /// Helper method to replace NewLine characters with <br />
         /// </summary>
-        /// <param name="log"></param>
-        /// <returns></returns>
         private List<string> ArrangeFileContent(string log)
         {
             log = log[log.IndexOf("Application is starting")..];

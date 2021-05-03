@@ -5,8 +5,6 @@ using HealthChecker.Persistence.Entities;
 
 namespace HealthChecker.Business.Configurations
 {
-
-
     /// <summary>
     /// Configurations for AutoMapper.
     /// </summary>
@@ -17,10 +15,6 @@ namespace HealthChecker.Business.Configurations
             return new MapperConfiguration(x => x.AddProfile<AutoMapperMappings>());
         }
     }
-
-
-
-
 
     /// <summary>
     /// Profile for AutoMapper

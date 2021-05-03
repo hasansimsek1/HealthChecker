@@ -15,10 +15,8 @@ using System.Threading.Tasks;
 
 namespace HealthChecker.Business.Services
 {
-
     public class TargetService : ITargetService
     {
-
         private readonly ICrudRepository<Target, TargetDto> _targetRepository;
         private readonly IUserService _userService;
         private readonly ILogger<TargetService> _logger;
@@ -45,16 +43,9 @@ namespace HealthChecker.Business.Services
             _targetUpdateRepository = targetUpdateRepository;
         }
 
-
-
-
-
         /// <summary>
         /// Inserts a new Target record to the database and creates a new recurring job.
         /// </summary>
-        /// <param name="model"></param>
-        /// <param name="user"></param>
-        /// <returns></returns>
         public async Task AddTargetAsync(NewTargetBindingModel model, ClaimsPrincipal user)
         {
             string jobId = Guid.NewGuid().ToString();
@@ -77,15 +68,9 @@ namespace HealthChecker.Business.Services
             await _targetRepository.InsertAsync(targetAppDto);
         }
 
-
-
-
-
         /// <summary>
         /// Gets all Target records of the specified user.
         /// </summary>
-        /// <param name="user"></param>
-        /// <returns></returns>
         public async Task<List<TargetViewModel>> GetTargetsAsync(ClaimsPrincipal user)
         {
             // TODO : do TargetDto to TargetViewModel conversion with AutoMapper
@@ -110,16 +95,9 @@ namespace HealthChecker.Business.Services
             return targetsVM;
         }
 
-
-
-
-
         /// <summary>
         /// Gets the Target record by TargetId and UserId.
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="user"></param>
-        /// <returns></returns>
         public async Task<TargetViewModel> GetTargetAsync(string id, ClaimsPrincipal user)
         {
             var userId = _userService.GetUserId(user);
@@ -143,16 +121,9 @@ namespace HealthChecker.Business.Services
             return targetViewModel;
         }
 
-
-
-
-
         /// <summary>
         /// Updates the Target of the user.
         /// </summary>
-        /// <param name="model"></param>
-        /// <param name="user"></param>
-        /// <returns></returns>
         public async Task UpdateAsync(UpdateTargetBindingModel model, ClaimsPrincipal user)
         {
             var userId = _userService.GetUserId(user);
@@ -172,31 +143,18 @@ namespace HealthChecker.Business.Services
             await _targetUpdateRepository.UpdatePartially(targetDto);
         }
 
-
-
-
-
         /// <summary>
         /// Get job ID by target ID.
         /// </summary>
-        /// <param name="targetId"></param>
-        /// <returns></returns>
         private async Task<string> GetJobIdByTargetId(string targetId)
         {
             var target = await _targetRepository.GetAsync(x => x.Id == targetId);
             return target.SingleOrDefault().JobId;
         }
 
-
-
-
-
         /// <summary>
         /// Gets the health checks of the target performed before by recurring job.
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="user"></param>
-        /// <returns></returns>
         public async Task<List<HealthCheckViewModel>> GetTargetHealthHistoryAsync(string id, ClaimsPrincipal user)
         {
             var userId = _userService.GetUserId(user);
@@ -204,16 +162,9 @@ namespace HealthChecker.Business.Services
             return result.AsQueryable().ProjectTo<HealthCheckViewModel>(_mapper.ConfigurationProvider).OrderByDescending(x => x.DateAdded).ToList();
         }
 
-
-
-
-
         /// <summary>
         /// Soft-deletes the target and removes the recurring job.
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="user"></param>
-        /// <returns></returns>
         public async Task DeleteAsync(string id, ClaimsPrincipal user)
         {
             var userId = _userService.GetUserId(user);

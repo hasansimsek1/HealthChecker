@@ -16,8 +16,6 @@ using System;
 
 namespace HealthChecker.Business.Configurations
 {
-
-
     /// <summary>
     /// Extensions for IServiceCollection interface.
     /// </summary>
@@ -30,8 +28,6 @@ namespace HealthChecker.Business.Configurations
         {
             services.AddDbContextPool<AppDbContext>(options => { options.UseSqlServer(config.GetConnectionString("HealthCheckerDb")); });
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
-
-
 
             services.AddHangfire(configuration => configuration
                 .SetDataCompatibilityLevel(CompatibilityLevel.Version_170)
@@ -47,20 +43,13 @@ namespace HealthChecker.Business.Configurations
                 }));
             services.AddHangfireServer();
 
-
-
             services.AddAutoMapper(typeof(AutoMapperMappings));
-
-
 
             services.AddScoped(typeof(ICrudRepository<,>), typeof(SqlRespository<,>));
             services.AddScoped(typeof(ITargetRepository), typeof(SqlRespository<Target, TargetDto>));
             services.AddScoped<ITargetService, TargetService>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IBackgroundJobService, HangfireJobService>();
-
-
-
 
             /* 
              * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
