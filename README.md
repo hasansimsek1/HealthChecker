@@ -1,5 +1,5 @@
 # HealthChecker
-Sample web application that executes background jobs.
+Sample ASP.NET Core web application that executes background jobs using Hangfire.
 
 
 ### If you want to get it running locally, take these steps..
